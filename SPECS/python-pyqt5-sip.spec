@@ -1,18 +1,17 @@
 %global pkg_name pyqt5-sip
 %global pypi_name PyQt5_sip
 %global _sip_api_major 12
-%global _sip_api_minor 9
+%global _sip_api_minor 11
 %global _sip_api %{_sip_api_major}.%{_sip_api_minor}
 
 Name:           python-%{pkg_name}
-Version:        12.9.1
+Version:        12.11.1
 Release:        1%{?dist}
 Summary:        The sip module support for PyQt5
 
 License:        GPLv2 or GPLv3
 URL:            https://www.riverbankcomputing.com/software/sip/
 Source0:        %{pypi_source}
-Patch0:         python3.11.patch
 
 BuildRequires:  gcc
 BuildRequires:  python3-devel
@@ -48,6 +47,10 @@ Provides: python3-pyqt5-sip-api(%{_sip_api_major})%{?_isa} = %{_sip_api}
 %{python3_sitearch}/PyQt5/
 
 %changelog
+* Fri Apr 21 2023 Jan Grulich <jgrulich@redhat.com> - 12.11.1-1
+- 12.11.1
+  Resolves: bz#2188589
+
 * Thu May 26 2022 Jan Grulich <jgrulich@redhat.com> - 12.9.1-1
 - Initial package
   Resolves: bz#2090327
